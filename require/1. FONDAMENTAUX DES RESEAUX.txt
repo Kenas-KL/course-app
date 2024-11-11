@@ -1,0 +1,72 @@
+1. FONDAMENTAUX DES RESEAUX
+1.1.C’est quoi un réseau ?
+Un réseau informatique est un ensemble d'équipements informatiques reliés entre deux afin d'échanger des données.
+Le plus petit réseau informatique possible est donc deux ordinateurs connectés entre-eux.
+
+
+Image:require\imgs\1.jpg
+
+Image:require\imgs\2.jpg
+Selon leur taille, on classifie les réseaux en 3 catégories:
+
+Réseau local (LAN ou Local Area Network en anglais) : ce sont des petits réseaux (au maximum de quelques centaines d'ordinateurs) au sein d'une habitation, d'une entreprise, d'un établissement scolaire…
+
+- Le réseau du lycée ou celui de votre habitation avec votre box sont donc des LAN (réseau local)
+
+- Réseau urbain (MAN ou Metropolitan Area Network en anglais) : il interconnecte plusieurs LAN géographiquement proche (quelques dizaines de km au maximum). → Le réseau au sein d'une ville est donc un MAN (réseau urbain)
+
+- Réseau étendu (WAN ou Wide Area Network en anglais) : il interconnecte plusieurs LANs à travers de grandes distances géographiques.
+
+- L'Internet mondial est donc un WAN (un réseau étendu)
+
+
+Image:require\imgs\3.jpg
+1.2.MODEL OSI et TCP/IP
+
+L’objectif d’un réseau, nous l’avons dit dès le début du cours, c’est de permettre aux machines de communiquer entre elles. Or, dans un réseau quel qu’il soit, tous les interlocuteurs (ou machines) sont différents.
+Les règles d’uniformisation sont nécessaires pour permettre les communications.
+Il existe 2 catégories de règles dans les réseaux informatiques :
+- les règles matérielles qu’on appelle plutôt des normes ;
+- les règles logicielles ou protocoles.
+Nous avons déjà vu plusieurs de ces règles d’uniformisation, comme :
+- l’utilisation de RJ45 comme connecteur pour les réseaux cuivre ;
+
+- la nécessité d’une adresse IP sur les machines d’un réseau. Mais il en existe bien d’autres ! Le modèle OSI propose de classer chacune de ces règles à différents niveaux, sur un total de 7 niveaux qu’on appelle aussi des couches. Chacune de ces couches porte un nom relatif à sa fonction.
+
+
+Image:require\imgs\4.jpg
+Le Modèle TCP/IP 
+Le modèle TCP/IP ne comporte que 4 couches. Il est beaucoup moins complexe et plus applicable à la réalité que le modèle OSI.
+
+
+Image:require\imgs\5.jpg
+Ce modèle porte le nom des 2 protocoles les plus importants qui le constituent.
+- Le protocole IP
+Il est situé dans la couche Internet dont l’équivalent est la couche 3 du modèle OSI : la couche Réseau. Vous connaissez déjà l’IP pour son système d'adressage.
+- Le protocole TCP (Transmission Control Protocol, pour "protocole de contrôle de transmission")
+
+Il se situe dans la couche Transport, dont l’équivalent est la couche 4 du modèle OSI qui porte le même nom. Son rôle est d’établir des règles permettant de transporter un message de la source à la destination, en s’assurant que rien n’ait été perdu en route.
+
+Parmi ces règles, on trouve le fait de devoir numéroter chaque paquet. Lorsqu’un message est trop long pour être envoyé en un seul paquet, il est découpé en plusieurs parties mises dans différents paquets qu’il faut numéroter.
+
+Toutes les règles ou consignes nécessaires pour communiquer un message sur un réseau doivent être envoyées dans le paquet contenant le message en question.
+
+Le paquet est alors constitué du message à envoyer, sur lequel viennent s’ajouter toutes les consignes nécessaires, classées par couches. C’est ce qu’on appelle le mécanisme d’encapsulation. Voilà à quoi ressemble schématiquement un message encapsulé suivant
+
+le modèle TCP/IP :
+
+Image:require\imgs\6.jpg
+Le modèle TCP/IP traduit plus fidèlement la réalité des communications sur les réseaux IP. Cependant, il reste moins détaillé que le modèle OSI.
+Ainsi, dans la pratique, on continue à associer les équipements réseaux avec leur couche du modèle historique, le modèle OSI.
+
+
+Image:require\imgs\7.jpg
+En résumé
+- Le modèle OSI permet de classer, sur plusieurs niveaux, les règles ou protocoles qui rendent possibles les communications sur un réseau.
+
+- Ce modèle est composé de 7 couches portant toutes un nom indiquant leur fonction. Dans l’ordre, on trouve les couches : Physique, Liaison de données, Réseau, Transport, Session, Présentation, Application.
+
+- Chaque protocole et chaque élément du réseau sont associés à une couche précise. Le protocole IP, ainsi que les routeurs qui manipulent et comprennent les adresses IP, sont associés à la couche 3, la couche Réseau.
+
+- Le modèle TCP/IP est un modèle similaire en 4 couches.
+- Lorsqu’un message est généré, il est assemblé avec l’ensemble des règles qui permettent son acheminement. Ce processus d’assemblage s’appelle l’encapsulation.

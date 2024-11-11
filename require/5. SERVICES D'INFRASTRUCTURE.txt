@@ -1,0 +1,70 @@
+5. SERVICES D’INFRASTRUCTURE
+Le DHCP c’est quoi ? 
+Le DHCP est un protocole réseau chargé de la configuration automatique des adresses IP d'un réseau informatique.
+Il évite ainsi à l'utilisateur qui se connecte pour la première fois à un réseau, d'avoir à configurer la pile IP de son équipement.
+
+Le DHCP fonctionne avec l'IPv4 et l'IPv6 mais ce dernier peut s'en passer.
+Le DHCP ou Dynamic Host Configuration Protocol est un protocole de communication ou protocole réseau parfaitement indispensable.
+On le traduit généralement par protocole de configuration dynamique des hôtes.
+Garantir la configuration automatique des paramètres IP Le DHCP doit garantir la configuration automatique des paramètres IP d'une machine ou d'une station.
+Elle lui confère une adresse IP efficace et peut configurer tout à la fois : l'adresse de la passerelle par défaut, celle des serveurs DNS,
+
+Le DHCP règle un certain nombre d'inconvénients de l'IP : il centralise les modifications de paramètres, qu'il renvoie sur les stations au moment du démarrage, les ordinateurs en service ont la possibilité de recourir à une adresse de l'espace d'adressage.
+
+Qu’est ce qu’un serveur DNS ?
+DNS veut dire « Domain Name System » ou système de nom de domaine. Pour vous expliquer, le rôle et le fonctionnement d’un serveur DNS, je vais reprendre l’exemple du téléphone.
+- Vous souhaitez appeler quelqu’un dont vous ne connaissez pas le n°de téléphone ?
+- Que faites-vous ? ...
+- ... vous utilisez un annuaire !
+
+Et bien voila, un serveur DNS est un annuaire pour ordinateur.
+Lorsque vous voulez accéder à un ordinateur dans le réseau, votre ordinateur va interroger le serveur DNS pour récupérer l’adresse de l’ordinateur que vous voulez joindre.
+Une fois, que votre ordinateur aura récupéré l’adresse du destinataire, il pourra le joindre directement avec son adresse IP.
+Le serveur DNS va permettre de faire la relation entre nom d’ordinateur et adresse IP. (ramené au téléphone, on obtient : nom de l’abonné et n°).
+Principe d’une requête DNS
+
+
+Image:require\imgs\16.jpg
+Dans l’exemple ci-dessus, on voit que la requête « quelle est l’adresse de www.google.fr » a répondu 74.125.230.248.
+Cette requête s’appelle une résolution de nom de domaine. Si l’on poursuit, on peut constater que le serveur DNS n’est utilisé que sur la partie 1-Question et 2-Réponse.
+Une fois que l’ordinateur a récupéré l’adresse du serveur à joindre, il n’a plus besoin du serveur DNS.
+
+Cette adresse IP n’est pas une adresse au hasard. Elle correspond bien à un des serveurs de Google. (il y en a évidemment un grand nombre).
+Donc, si dans votre dans la barre d’adresse de votre navigateur, vous tapez : http://74.125.230.248, la page de recherche de Google doit s’afficher.
+Attention, cela fonctionne à l’heure ou j’écris ces lignes, mais ce ne sera peut-être pas le cas au moment ou vous les lirez.
+(le serveur 74.125.230.248 sera peut-être éteint ? ou affecté à de nouvelle tâches ?) NB du 03/11/2022 : Comme je vous le disais au-dessus, l’adresse peut avoir changé, et c’est le cas :
+
+Essayez maintenant avec https://142.250.179.99 (vous obtiendrez une erreur liée au certificat mais le site correspondant pointe bien vers www.google.fr)
+
+Qu’est ce que la Traduction d’adresses réseau (NAT) ?
+Le mécanisme de translation d’adresses (aussi appelé Network Adress Translation ) a été conçu pour répondre à la pénurie d’adresses IP utilisées avec le protocole IPV4.
+
+Le fonctionnement du NAT consiste à utiliser une seule adresse IP routable (ou un nombre limité d’adresses IP), afin de connecter l’ensemble des machines du réseau.
+
+Ceci permet de réaliser une translation au niveau de la passerelle de connexion à internet entre l’adresse interne de la machine souhaitant se connecter ( qui est non routable) et l’adresse IP de la passerelle.
+
+
+
+Image:require\imgs\17.jpg
+
+Ce processus permet de sécuriser le réseau interne, puisqu’il masque totalement l’adressage interne.
+Vu d’un observateur extérieur au réseau, toutes les requêtes semblent provenir de la même adresse IP.
+Types de translation
+Selon ls cas de figure, on va distinguer deux types de traduction (ou translation) :
+- Translation statique 
+- Translation Dynamique
+
+Lorsqu’on associe une adresse IP publique à une adresse IP privé (interne du réseau), on appelle cela de la translation NAT statique.
+Le routeur (ici il s’agirait plus d’une passerelle) permet ainsi d’associer à une adresse IPprivée (exemple : 192.168.1.100), une adresse publique routable sur internet (157.54.130.1) et de faire.
+La traduction, dans le sent sortant, comme dans le sens entrant tout en modifiant l’adresse directement par. Le paquet émis.
+
+Ce type de translation permet alors de connecter des machines du réseau internet à internet, de manière transparente, sans pour autant résoudre le problème de pénurie d’adresses IP.
+En effet, pour le nombre d’adresses internet à associer il faut le même nombre d’adresses routables.
+
+Le mécanisme de NAT dynamique permet de partager une adresse IP routable entre plusieurs équipements du réseau privé.
+Ainsi, vues de l’extérieur, toutes les machines du réseau d’adressage interne possèdent virtuellement la même adresse IP.
+
+En langage anglais cela se traduit par du IP masquerading : il s’agit de mascarade IP qui est synonyme de translation NAT dynamique. De plus, pour fonctionner ce système s’appuie également sur la translation de port (aussi appelée port Adress Translation ou PAT). Il s’agit del’affectation d’un port source différent lors de chaque requête de telle sorte à pouvoir maintenir une correspondance entre les requêtes du réseau interne et les réponses des systèmes provenant d’internet, toutes adressée à l’adresse IP du routeur.
+
+Le mécanisme de PAT est également appelé NAT Overloading 
+ou surchage du NAT, puisque tel est son rôle.

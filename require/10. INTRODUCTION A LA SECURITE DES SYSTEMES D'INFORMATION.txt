@@ -1,0 +1,105 @@
+10. INTRODUCTION A LA SECURITE DES SYSTÈMES D’INFORMATION
+10.1. LA SECURITE DES SYSTEMES D’INFORMATION
+10.1.1. Objectifs de la sécurité des systèmes d’information
+La sécurité des systèmes d’information vise les objectifs suivants (CIA)1:
+- La confidentialité :
+Seules les personnes autorisées ont accès aux informations qui leur sont destinées. Tout accès indésirable doit être empêché.
+- L’intégrité :
+Les données doivent être celles que l’on attend, et ne doivent pas être altérées de façon fortuite, illicite ou malveillante. En clair, les éléments considérés doivent être exacts et complets.
+- La disponibilité :
+Le système doit fonctionner sans faille durant les plages d’utilisation prévues et garantir l’accès aux services et ressources installées avec le temps de réponse attendu.
+
+D’autres aspects de “preuve” peuvent aussi être considérés comme des objectifs de la sécurité des systèmes d’information, tels que :
+- L’authentification :
+L’identification des utilisateurs est fondamentale pour gérer les accès aux espaces de travail pertinents et maintenir la confiance dans les relations d’échange.
+- La non-répudiation et l’imputation :
+Aucun utilisateur ne doit pouvoir contester les opérations qu’il a réalisées dans le cadre de ses actions autorisées, et aucun tiers ne doit pouvoir s’attribuer les actions d’un autre utilisateur.
+- La traçabilité (ou « Preuve ») :
+Garantie que les accès et tentatives d’accès aux éléments considérés sont tracés et que ces traces sont conservées et exploitables.
+10.1.2. Vulnérabilités
+Tous les actifs d’un système d’information peuvent faire l’objet de vulnérabilités, soit d’une faiblesse qui pourrait compromettre un critère de sécurité défini comme l’accès non autorisé à des données confidentielles ou la modification d’un système.
+Un exploit est une charge informatique ou un outil qui permet d’“exploiter” une faiblesse ciblée, soit une vulnérabilité.
+
+Image:require\imgs\61.jpg
+10.1.3. Menaces 
+Une menace est l’action probable qu’une personne malveillante puisse mener grâce à un “exploit” contre une faiblesse en vue d’atteindre à sa sécurité.
+Une menace est une cause potentielle d’incident, qui peut résulter en un dommage au système ou à l’organisation. Quelques exemples de menaces courantes :
+- Code malveillant
+- Personnes extérieures malveillantes
+- Perte de service
+- Stagiaire malintentionné
+
+Image:require\imgs\62.jpg
+10.1.4. Attaques 
+Une attaque est l’action malveillante destinée à porter atteinte à la sécurité d’un bien. Une attaque représente la concrétisation d’une menace nécessitant l’exploitation d’une vulnérabilité.
+
+
+Image:require\imgs\63.jpg
+10.1.5. Risques
+Une fois les objectifs de sécurisation déterminés, les risques d’attaque pesant sur chacun de ces éléments peuvent être estimés en fonction de menaces et de vulnérabilités.
+Le niveau global de sécurité des systèmes d’information est défini par le niveau de sécurité du maillon le plus faible.
+Les précautions et contre-mesures doivent être envisagées en fonction des vulnérabilités propres au contexte auquel le système d’information est censé apporter service et appui.
+
+Il faudrait pour cela estimer :
+- la gravité des impacts au cas où les risques se réaliseraient,
+- la vraisemblance des risques (ou leur potentialité, ou encore leur probabilité d’occurrence).
+
+10.2. SÉCURITÉ DANS LE LAN
+10.2.1. Introduction
+On trouvera énormément de vulnérabilités intrinsèques dans le réseau
+
+LAN pour une raison simple : les administrateurs partent du principe de confiance.
+Tout accès au LAN est cédé aux utilisateurs par un contrat de confiance dont la limite est l’abus de la crédulité des solutions mises en place dans l’infrastructure.
+On en pensera ce que l’on voudra. Toutefois cela ne nous empêche certainement pas de nous poser quelques questions sur le sujet.
+
+Quelle sont ces vulnérabilités que l’on peut rencontrer dans un LAN ?
+Quels sont les cibles et les attaques potentielles ? Et, enfin, quelles sont les bonnes pratiques et les remèdes à appliquer ?
+
+10.2.2. Attaques
+On trouvera quasiment toute la terminologie des attaques dans le domaine de la sécurité des infrastructures de réseaux locaux qui rompent les principes fondamentaux de confidentialité, d’intégrité et d’authentification :
+
+écoute, usurpation, déni de service (DoS), MitM (homme du milieu, Man-in-the Middle),Les vecteurs d’attaques sont des humains qui ont des accès autorisés ou non au réseau, mais aussi des logiciels malveillants pilotés automatiquement ou à distance.
+
+Dès qu’un accès au réseau local est compromis, la plupart du temps, la porte est ouverte sur les services du système d’information de l’organisation.
+
+Si les attaques de déni de service (DoS) sont parmi les plus crapuleuses et les moins intéressantes, elles seraient néanmoins les plus visibles et les plus faciles à mettre en oeuvre avec peu de moyens de réaction du côté des défenseurs.
+Ces dernières sont donc aussi des menaces sur le LAN à prendre en compte.
+10.2.3. Cibles
+Toute technologie d’accès comme Ethernet ou Wi-Fi sur le LAN (ou le “WLAN”, mais aussi les réseaux mobiles) sont touchés par cette problématique.
+
+Au nombre des cibles, on peut citer particulièrement les commutateurs et les routeurs, ainsi que tout élément d’infrastructure mais aussi principalement les utilisateurs et leurs services sur le réseau.
+
+Les protocoles de résolution d’adresse IP comme ARP et ND sont des vecteur favoris et très vulnérables.
+
+Pour empêcher des accès non-autorisés sur base des adresses L2 de bas niveau comme des adresses MAC, la fonctionnalité Cisco port security mac-address sticky au menu de la certification CCNA est une mesure intéressante, mais elle est aisée à dépasser alors que sa gestion reste une contrainte.
+
+Si la menace sur ces protocles ARP et ND est prise au sérieux, on s’orientera plus volontiers vers des solutions comme DAI (Deep ARP Inspection) ou IPv6 First Hop Security (notamment avec RA Guard).
+
+Mais il y a tellement de services à disposition sur le réseau et ils sont si crédules qu’il convient de rester attentif aux menaces sur les protocoles d’infrastructure comme
+
+DHCP, DNS, NTP, SNMP ou encore les protocoles de routage dynamique (EIGRP, OSPF) ou de redondance de passerelle (HSRP, VRRP), mais les protocoles d’accès distant aux consoles (SSH et ancêtres comme Telnet ou Rlogin).
+
+Sur les commutateurs (Cisco), on trouvera une série de protocoles L2 propriétaires ou IEEE 802.1 tels que 802.1.q, 802.1D, CDP, VTP, DTP, PaGP, LACP, etc., la plupart du temps activés par défaut et qui constituent autant de vulnérabilités intrinsèques à une configuration par défaut.
+
+Parmi beaucoup d’autres possibilités, activer bpduguard sur les ports Access et désactiver tout ce qui est inutile : CDP, VTP, DTP, les ports orphelins, etc., sont recommandées.
+Selon les conseils de Cisco, on évitera à tout prix d’utiliser le VLAN 1.
+
+10.2.4. IEEE 802.1X / EAP / Radius
+Enfin si les moyens de l’organisation le permettent et sa la volonté y est, on mettra en oeuvre une solution qui authentifie les utilisateurs avant de leur donner un accès (filaire ou non) de couche (L2) au réseau avec 8021.X/EAP/RADIUS.
+
+Si le choix de l’organisation s’oriente vers des solutions qui intègrent la gestion du réseau filaire et sans-fil de manière transparente, celle-ci est certainement prête pour un tel type de déploiement par l’obligation du support du protocole de sécurité de réseau sans-fil de type “WPA/WPA2 Enterprise” respectant la norme IEEE 802.11i intégrant IEEE 8021.X/EAP/RADIUS.
+
+- PacketFence
+- Microsoft NAP
+- Cisco NAC
+- HP, Aruba,
+
+2.5. Contre-mesures
+- Sur les commutateurs : du filtrage (port-security, vACLs), de la vérification protocolaire (bpduguard, dai, ipv6 fhs, dhcp snooping), et de bonnes pratiques de configuration et de gestion.
+Dans l’infrastructure :
+de l’IDS/IPS généraliste (snort, surricata) ou spécialisé (arp-watch, ndpmon, packetfence). Filtrage NTP et SNMP, Authentification NTP, authentification et chiffrement SNMP, authentification OSPF et EIGRP, authentification VRRP/HSRP.
+
+- Sur les hôtes : au minimum des solutions de chiffrement TLS : HTTPS/HSTS, VPN TLS, IMAPS, SSH, … et un must avec une solution IDS/IPS/AV intégrée au périphérique terminal de type “End-Point Security” ; bannir les protocoles qui passent en clair (HTTP, SMTP, POP3).
+
+- Sur les port d’accès des utilisateurs finaux : IEEE 8021.X/EAP/RADIUS, IEEE 802.11i, des communications VPN dans les réseaux tiers ou non-sécurisés.
+- Une serveillance (monitoring) des événements avec de la journalisation (logging) et des alertes.

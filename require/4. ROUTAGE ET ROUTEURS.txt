@@ -1,0 +1,67 @@
+4. ROUTAGE ET ROUTEURS
+4.1. c’est quoi le routage ?
+La raison d’être d’IP est bien d’interconnecter des réseaux physiques hétérogènes ou non.
+Ce protocole de niveau 3 propose un format de paquets, un format d’adressage et une logique d’acheminement des paquets entre les réseaux physiques.
+Cette dernière fonction se nomme : Le routage, cette fonction est réalisée, généralement, par des équipements spécifiques appelés des routeurs.
+Ces routeurs appliquent tous les mêmes règles de base pour que le transfert des paquets soit cohérents. Ce sont les règles de routage. Avec IP, une notion très importante est à connaître :
+
+IP route des réseaux pas des machines ! Ceci veut dire, que seule la partie réseau d’une adresse est examinée par les équipements de routage pour déterminer la direction à prendre.
+L’acheminement vers la machine est réalisée par la logique de traitement des paquets appliquée par les machines IP sur le LAN de destination.
+
+Nous distinguons deux types de routages à savoir : 
+- Le routage statique 
+- Le routage dynamique
+
+
+Image:require\imgs\12.jpg
+
+Pour ce qui est du routage statique, il est simple à mettre en place mais présente des nombreux inconvénients. Avec cette topologie , il y beaucoup des routeurs, et cela signifie qu’il y a beaucoup des réseaux. il va falloir configurer beaucoup de routes statiques. Si un routeur tombe en panne, il faudra refaire la configuration Manuelle afin de faire passer le trafic. Cette topologie serait plus approprié pour le routage dynamique car les informations du routage circulent en temps réel sur le réseau et si nœud tombait en panne la mise à jour se fera automatiquement afin de faire passer le trafic sur un autre chemin.
+
+Il existe différents types de protocole de routage :
+- Le Protocole IGP 
+- Le Protocole EGP
+
+
+Image:require\imgs\13.jpg
+Dans ce schéma nous parlons des systèmes autonomes.
+C’est quoi un système autonome ?
+Il est l’ensemble des routeurs interconnectés qui appartient à un seul domaine administratif.
+Par exemple, un réseau d’entreprise peut être un système autonome, le fournisseur d’accès internet peut avoir son propre système autonome.
+A l’intérieur d’un système autonome, les protocoles qui circulent sont du type IGP (Interior Gateway Protocol), comme exemple citons :
+
+OSPF-EIGRP.
+
+Entre les systèmes autonomes, on y retrouve des protocoles du type EGP (Exterior Gateway Protocol) qui utilise qu’un seul protocole sur internet qu’on appel BGP.
+
+
+Image:require\imgs\14.jpg
+Dans cette illustration, le PC martin cherche à joindre le serveur SPC .
+La question est de savoir quel chemin qui sera emprunté par martin pour joindre le serveur.
+Tout dépend du protocole de routage utilisé.
+Que ça soit OSPF (Open Shortest Path First) ou EIGRP (Enhanced interior Gateway Routing Protocol),
+ils ont tous deux de visions différentes pour déterminer le chemin le plus cours pour aller de la source à la destination.
+Les deux protocoles déterminent les meilleurs chemins en utilisant ce qu’on appelle des métriques. Par exemple OSPF utilise le coup comme métrique ;
+il examine la bande passante de l’interface pour trouver le chemin le plus rapide.
+
+Il preferera utiliser un lien de 100Mbps qu’un lien de 10Mbps et EIGRP qui est propriétaire CISCO, utilise plusieurs métriques.
+
+Il examine la bande passante ainsi que le délai de l’interface. On peut aussi ajouter pour la charge et la fiabilité de l’interface comme métrique.
+
+Es qu’on peut utiliser plusieurs protocoles de routage en même temps sur un routeur ?
+La réponse est Oui et cela arrive très souvent quand deux entreprises fusionnent leurs réseaux.
+Retenez jusque les métriques permettent aux protocoles de déterminer le chemin le plus court de l’origine vers la destination.
+Elle peut correspondre :
+- Au nombre de sauts IP nécessaires pour atteindre le réseau destination, comme dans RIP ;
+- À un coût numérique qui dépend de la bande passante des liens franchis, comme OSPF ;
+- Ou au Résultat d’un calcul plus complexe, qui tient compte de la charge ou du délai comme dans EIGRP.
+
+Lorsque deux protocole fournissent les informations de routage sur le même réseau de destination, le routeur doit faire un choix.
+Il prendra sa décision grâce à la distance administrative. Plus la distance administrative est faible, plus la route est fiable.
+Dans l’exemple ci haut :
+
+Image:require\imgs\15.jpg
+Cela signifie que notre paquet passera par le haut. Le protocole EIGRP est fiable que OSPF parce qu’il est propriétaire CISCO.
+Quelques protocoles et leurs classes :
+- RIP : Est un protocole de routage à vecteur de distance 
+- EIGRP : protocole de routage à vecteur de distance avancée
+- OPSF : protocole de routage à état de liens

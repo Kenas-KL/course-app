@@ -1,0 +1,58 @@
+2. PROTOCOLE IPV4
+Le rôle fondamental de la couche réseau (niveau 3 du modèle OSI) est de déterminer la route que doivent emprunter les paquets.
+
+Cette fonction de recherche de chemin nécessite une identification de tous les hôtes connectés au réseau. De la même façon que l'on repère l'adresse postale d'un bâtiment à partir de la ville, la rue et un numéro dans cette rue, on identifie un hôte réseau par une adresse qui englobe les mêmes informations.
+
+Le modèle TCP/IP utilise un système particulier d'adressage qui porte le nom de la couche réseau de ce modèle : l'adressage IPv4.
+
+On définit ensuite les classes d'adresses IPv4 qui correspondent au tout premier mode de découpage de l'espace d'adressage.
+
+Comme ce mode de découpage ne convenait pas du tout au développement de l'Internet, on passe en revue la chronologie des améliorations apportées depuis 1980 :
+
+les sous-réseaux ou subnetting,la traduction d'adresses ou Network Address Translation (NAT) et enfin le routage inter-domaine sans classe.
+
+Avant d'étudier les mécanismes d'adressage il faut préciser que le protocole IPv4 sert à véhiculer trois types de trafic distincts. unicastLe trafic unicast désigne une communication entre un hôte source unique et un hôte destination unique lui aussi.
+
+multicast
+Le trafic multicast désigne une communication entre un hôte source unique et un groupe d'hôtes qui ont choisi de recevoir le flux émis par la source.
+L'émission d'une chaîne de télévision est l'analogie usuelle pour ce type de trafic.
+L'émission est permanente et seuls les téléviseurs réglés pour recevoir cette chaîne affichent la vidéo de cette chaîne.
+broadcast
+Le trafic broadcast désigne un flux émis par un hôte à destination de tous les autres hôtes appartenant au même domaine de diffusion.
+
+Ce type de trafic ne peut exister que sur les réseaux dits de diffusion comme Ethernet. Par exemple, le protocole ARP utilise une trame de diffusion (broadcast) pour interroger tous les autres hôtes du réseau pour savoir à quelle adresse MAC correspond l'adresse IPv4 connue.
+
+Le format des adresses IPv4 Les adresses IPv4 sont composées de 4 octets. Par convention, on note ces adresses sous forme de 4 nombres décimaux de 0 à 255 séparés par des points. L'originalité de ce format d'adressage réside dans l'association de l'identification du réseau avec l'identification de l'hôte.
+
+- La partie réseau est commune à l'ensemble des hôtes d'un même réseau,
+- La partie hôte est unique à l'intérieur d'un même réseau.
+Prenons un exemple d'adresse IPv4 pour en identifier les différentes parties :
+Tableau 1. Exemple : adresse IP 192.168.1.1
+
+Image:require\imgs\8.jpg
+Le masque de réseau
+Le masque de réseau sert à séparer les parties réseau et hôte d'une adresse. On retrouve l'adresse du réseau en effectuant un ET logique bit à bit entre une adresse complète et le masque de réseau.
+
+L'adresse de diffusionChaque réseau possède une adresse particulière dite de diffusion. Tous les paquets avec cette adresse de destination sont traités par tous les hôtes du réseau local.
+
+Les classes d'adresses À l'origine, plusieurs groupes d'adresses ont été définis dans le but d'optimiser le cheminement (ou le routage) des paquets entre les différents réseaux. Ces groupes ont été baptisés classes d'adresses IP.
+
+Ces classes correspondent à des regroupements en réseaux de même taille. Les réseaux de la même classe ont le même nombre d'hôtes maximum.
+
+
+Image:require\imgs\9.jpg
+Classe A 
+Le premier octet a une valeur comprise entre 1 et 126 ; soit un bit de poids fort égal à 0. Ce premier octet désigne le numéro de réseau et les 3 autres correspondent à l'adresse de l'hôte. L'adresse réseau 127.0.0.0 est réservée pour les communications en boucle locale.
+
+Classe B
+Le premier octet a une valeur comprise entre 128 et 191 ; soit 2 bits de poids fort égaux à 10. Les 2 premiers octets désignent le numéro de réseau et les 2 autres correspondent à l'adresse de l'hôte.
+Classe C 
+Le premier octet a une valeur comprise entre 192 et 223 ; soit 3 bits de poids fort égaux à 110. Les 3 premiers octets désignent le numéro de réseau et le dernier correspond à l'adresse de l'hôte.
+Classe D 
+Le premier octet a une valeur comprise entre 224 et 239 ; soit 3 bits de =poids fort égaux à 1. Il s'agit d'une zone d'adresses dédiées aux services =de multidiffusion vers des groupes d'hôtes (host groups).
+Classe E 
+Le premier octet a une valeur comprise entre 240 et 255. Il s'agit d'une zone d'adresses réservées aux expérimentations.
+Ces adresses ne doivent pas être utilisées pour adresser des hôtes ou des groupes d'hôtes. Espace d'adressage
+
+
+Image:require\imgs\10.jpg

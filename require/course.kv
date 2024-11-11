@@ -1,0 +1,244 @@
+<Main_Screen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDNavigationLayout:
+        MDScreenManager:
+            MDScreen:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDTopAppBar:
+                        type: "medium"
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                        MDTopAppBarLeadingButtonContainer:
+                            MDActionTopAppBarButton:
+                                icon: "menu"
+                                style: "tonal"
+                                on_release: nav_drawer.set_state("toggle")
+                        MDTopAppBarTitle:
+                            text: "Course App Academia"
+                            pos_hint: {"center_x": .5}
+                        MDTopAppBarTrailingButtonContainer:
+                            MDActionTopAppBarButton:
+                                icon: "chat-question-outline"
+                                on_press: root.manager.current = 'evaluation_'
+
+
+#----------------------------------- body ---------------------------------
+                    ScrollView:
+                        MDList:
+                            id: list_parts_course
+#---------------------------------------------------------------------------
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            orientation: 'vertical'
+            radius: 0, dp(16), dp(16), 0
+            size_hint_x: None
+            width: "260dp"
+            MDNavigationDrawerMenu:
+                MDNavigationDrawerLabel:
+                    text: "SPC_Academia"
+                    bold: True
+                MDNavigationDrawerDivider:
+                MDNavigationDrawerItem:
+                    on_release: app.to_Facebook()
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "facebook"
+                    MDNavigationDrawerItemText:
+                        text: "Facebook"
+                MDNavigationDrawerItem:
+                    on_release: app.to_WhatsApp()
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "whatsapp"
+                    MDNavigationDrawerItemText:
+                        text: "WhatsApp"
+                MDNavigationDrawerItem:
+                    on_release: root.manager.current = 'mail_'
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "gmail"
+                    MDNavigationDrawerItemText:
+                        text: "Mail"
+            MDNavigationDrawerMenu:
+                MDNavigationDrawerLabel:
+                    text: "Autres"
+                    bold: True
+                MDNavigationDrawerDivider:
+                MDNavigationDrawerItem:
+                    on_release: app.theme_changed()
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "theme-light-dark"
+                    MDNavigationDrawerItemText:
+                        text: "Theme"
+                MDNavigationDrawerItem:
+                    on_release: root.manager.current = 'about_'
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "book-information-variant"
+                    MDNavigationDrawerItemText:
+                        text: "Apropos"
+
+
+
+<Mail_Screen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "backburger"
+                    on_release: root.manager.current = 'main_'
+            MDTopAppBarTitle:
+                text: "Mail"
+
+        MDBoxLayout:
+            padding: [dp(7),dp(10),dp(7),dp(10)]
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: [5,0,5,0]
+                canvas.before:
+                    Color:
+                        rgba: .5,.5,.5,.5
+                    RoundedRectangle:
+                        pos: self.width/2 - 150, self.height/2 - 110
+                        size: 300, 300
+                        source: 'L3.png'
+                        radius: [5,5,5,5]
+                MDLabel:
+                    text: "Ecrivez nous 'info@spc-enterprise.net'"
+                    bold: True
+                MDTextField:
+                    mode: "filled"
+                    MDTextFieldLeadingIcon:
+                        icon: "email-box"
+                    MDTextFieldHintText:
+                        text: "Sujet du Message"
+                        id: subject
+                MDTextField:
+                    mode: "filled"
+                    MDTextFieldLeadingIcon:
+                        icon: "email-newsletter"
+                    MDTextFieldHintText:
+                        text: "Coprs du message"
+                        id: mail
+                MDIconButton:
+                    icon: 'send'
+                    on_release: root.send_mail()
+                MDLabel:
+                    text: "Ecrivez nous ici sur cet Ecran puis la prochaine fois de puis votre boite Mail. Merci!"
+                    halign: "justify"
+
+<EvaluationScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "backburger"
+                    on_release: root.manager.current = 'main_'
+            MDTopAppBarTitle:
+                text: "Evaluez vous ..."
+        MDBoxLayout:
+            padding: [dp(7),dp(10),dp(7),dp(10)]
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: [5,0,5,0]
+                canvas.before:
+                    Color:
+                        rgba: .5,.5,.5,.5
+                    RoundedRectangle:
+                        pos: self.width/2 - 150, self.height/2 - 110
+                        size: 300, 300
+                        source: 'L3.png'
+                        radius: [5,5,5,5]
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: "50dp"
+                    padding: [dp(10),0,dp(10),0]
+                    spacing: dp(7)
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0,.2
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [dp(15),dp(15),dp(15),dp(15)]
+                    MDLabel:
+                        text: 'Score: 0'
+                        bold: True
+                        halign: 'left'
+                    MDLabel:
+                        text: 'Meilleur Score: 0'
+                        bold: True
+                        halign: 'right'
+                MDBoxLayout:
+
+
+<Reading_Screen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: "small"
+            id: title_
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "backburger"
+                    on_press: root.manager.current = 'main_'
+                    on_release: root.clear_scroller()
+            MDTopAppBarTitle:
+                id: title_
+                size_hint_x: None
+                width: "100dp"
+        MDBoxLayout:
+            padding: [dp(7),dp(10),dp(7),dp(10)]
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: [5,0,5,0]
+                canvas.before:
+                    Color:
+                        rgba: .5,.5,.5,.3
+                    RoundedRectangle:
+                        pos: self.width/2 - 150, self.height/2 - 110
+                        size: 300, 300
+                        source: 'L3.png'
+                        radius: [5,5,5,5]
+                RelativeLayout:
+                    ScrollView:
+                        id: scroller
+                        do_scroll_x: True
+                    RelativeLayout:
+                        id: load
+
+
+
+
+<AboutScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: .5,.5,.5,.5
+            RoundedRectangle:
+                pos: self.width/2 - 150, self.height/2 - 110
+                size: 300, 300
+                source: 'L3.png'
+                radius: [5,5,5,5]
+        MDTopAppBar:
+            type: "small"
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "backburger"
+                    on_release: root.manager.current = 'main_'
+            MDTopAppBarTitle:
+                text: "Apropos"
+        BoxLayout:
+
+
+
+

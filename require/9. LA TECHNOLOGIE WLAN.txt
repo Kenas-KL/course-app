@@ -1,0 +1,130 @@
+9. LA TECHNOLOGIE WLAN
+
+Ce chapitre d’introduction tente de présenter rapidement le concept de Wireless LAN (WLAN), les standards IEEE 802.11 et celui de WiFi. On positionnera également ces technologies dans le modèle OSI au niveau de la couche (L1) et la couche 2 accès au réseau (L2) qui détermine les méthodes d’accès au support (MAC).
+
+Le standard IEEE 802.11i embarque nativement la sécurité de couche 2 en matière d’authentification et de chiffrement.
+On évoquera enfin des questions de déploiement opérationnel.
+
+1. Technologie Wireless LAN (WLAN), IEEE 802.11 et WIFI
+Les technologies sans-fil (de réseau local), dites communément Wireless LAN (WLAN), reposent essentiellement sur un seul standard, celui du groupe de travail IEEE 802.11.
+
+La Wi-Fi Alliance est une autre organisation, un consortium commercial qui s’occupe d’assurer l’interopérabilité du matériel respectant le standard IEEE 802.11 venant de différents fabricants.
+
+
+Image:require\imgs\58.jpg
+2. Protocoles IEEE 802.11
+La technologie WLAN du standard IEEE 802.11 couvre la couche “Accès au réseau” du modèle TCP/IP ou les couches “Physique” (L1) et “Liaison de données” (L2) du modèle OSI.
+
+
+Image:require\imgs\59.jpg
+Tout comme IEEE 802.3 (Ethernet), IEEE 802.11 précise la couche physique par des caractéristiques de bande de fréquence, de modulation et d’encodage qui offrent des capacités de transport.
+
+On trouvera dans ce tableau les standards IEEE 802.11, leur génération, leur bande de fréquence, la vitesse pour un flux et le nombre de flux simultanés supportés (en théorie).
+
+Au niveau de la sous-couche MAC, le standard IEEE 802.11 propose une méthode d’accès au support (medium) qui est bien différente de celle d’Ethernet. Sur le plan strictement protocolaire, alors que le standard
+
+
+Image:require\imgs\60.jpg
+Ethernet IEEE 802.3 utilise CSMA/CD (Carrier Sense Multiple Access with 
+Collision Detection) qui vise à détecter des accès concurrents sur un fil, le 
+standard Wi-Fi IEEE 802.11 se propose d’éviter les collisions avec CSMA/CA pour “Collision Avoidance” sur un support partagé comme l’air, avec des mécanismes de contention.
+
+LES STANDARDS UTILISES DANS LA TECHNOLOGIE WLAN
+
+3. Sécurité IEEE 802.11 i
+
+Par nature, les transmissions des réseaux sans-fil se propagent en dehors du confinement d’une zone physique telle qu’un bâtiment ou un niveau d’étage.
+Ces transmissions pourraient parvenir de manière indiscrète à des interfaces tierces à l’organisation, car elles seraient situées dans la zone de couverture radio de l’oragnisation.
+
+À la suite des premières faiblesses publiées du WEP (Wired Equivalent Privacy), la sécurité embarquée du protocole IEEE 802.11 (1999), un nouveau standard de sécurité IEEE 802.11i a été ratifié en “draft standard” en 2004 en remplacement du protocole vulnérable.
+
+L’implémentation du protocole IEEE 802.11i est assurée par la Wi-Fi Alliance à travers les programmes de certification WPA, WPA2, WPA3 en vue d’assurer la transition matérielle et opérationnelle vers de nouveaux protocoles de sécurité.
+WPA, WPA2, WPA3 assurent au niveau de la couche 2 (L2) les fonctions de sécurité suivante :
+
+-l’authentification comme contrôle d’accès
+-le chiffrement du trafic pour la confidentialité
+-l’intégrité des messages (MIC, Message Integrity Check)
+
+4. Caractéristiques des technologies d’accès au réseau sans fil
+
+Un réseau sans-fil devrait répondre à différentes caractéristiques en ce qui concerne :
+- l’expérience utilisateur essentielle en terme de mobilité, de sécurité et de qualité de service
+- la nature du support comme l’air
+- les architectures WLAN en termes d’intégration et de gestion
+
+5. Expérience utilisateur
+
+Mobilité : les utilisateurs devraient accéder aux facilités du réseau à partir de n’importe quel périphérique, d’autant plus s’il est mobile.
+L’expérience mobile devrait être comparable à celle du LAN filaire.
+Sécurité : les utilisateurs devraient être authentifiés et leur trafic devrait être sécurisé (chiffré et authentifié) de manière forte selon des politiques de sécurité définies.
+
+Qualité de service : la disponibilité du réseau est assurée par de la redondance, de la gestion des congestions et un dimensionnement adapté des liaisons et de la couverture radio.
+
+6. Support comme l’air
+
+Le support de transmission des technologies sans fil est l’air, comme espace physique partagé par un ensemble d’utilisateurs. Cet espace dispose de limites par rapport aux réseaux filaires d’entreprise :
+- L’accès au support est partagé en Half-Duplex entre les candidats au placement du trafic.
+- Le support est sensible aux interférences radio.
+- Il offre un accès ouvert, par nature : les ondes radio ne sont pas confinées sur un câble qui serait intrinsèquement privé (pas nécessairement confidentiel ou chiffré), les écoutes, indiscrétions et usurpations étant aisées à mettre en oeuvre.
+- Un réseau Wi-Fi d’entreprise se passe difficilement d’une infrastructure filaire sous-jacente.
+
+7. Architecture WLAN
+
+En entreprise, différents éléments font que des architectures de réseau sans fil soient adaptées au-delà du protocole initial IEEE 802.11 :
+- L’intégration aux environnements filaires,
+- le grand nombre de points d’accès à gérer,
+- la gestion des profils des utilisateurs,
+- la gestion de la qualité de service et
+- la gestion de la sécurité.
+
+Le marché et notamment Cisco Systems, en titre de “Leader” parmi beaucoup d’acteurs, construisent et proposent des solutions qui se fondent sur le standard et sur bien d’autres protocoles et mises en oeuvre.
+
+Cisco Systems propose aussi ses solutions propriétaires qui peuvent être portées en standard IEEE ou IETF.Avec le temps, les fabricants de matériel deviennent des fournisseurs de services de connectivité LAN/WLAN :
+
+Avec du matériel d’infrastructure propriétaire et adpaté, les clients sont invités à profiter des fonctionnalités avancées avec des abonnements à des services.
+Les solutions deviennent de plus en plus ouvertes, offrant des APIs bien documentées et de nombreuses facilités.
+
+8. Éléments d’architecture WALN
+
+Pour construire une architecture Wireles LAN d’entreprise, différents éléments d’infrastructure doivent être présents :
+- Pontage IEEE 802.1 et Etherchannel
+- Composants des réseaux WLAN
+- Protocole de contrôle et Overlay WLC-AP
+- Protocoles d’authentification
+
+8.1. Pontage IEEE 802.1 et EtherChannel
+Le standard IEEE 802.11 est supporté par le cadre des protocoles de pontage IEEE 802.1 pour l’infrastructure.
+- IEEE 802.1D : MAC Bridges (Spanning-Tree)
+- IEEE 802.1p : mutualisé avec 802.1D-2004, Traffic Class
+
+Expediting and Dynamic Multicast Filtering
+
+- IEEE 802.1Q : Virtual LANs
+- IEEE 802.1s : mutualisé avec 802.1Q-2003, Multiple Spanning Trees
+- IEEE 802.1t : mutualisé avec 802.1D-2004, 802.1D Maintenance
+- IEEE 802.1v : mutualisé avec 802.1Q-2003, VLAN Classification by Protocol and Port
+- IEEE 802.1w : mutualisé avec 802.1D-2004, Rapid Reconfiguration of Spanning Tree
+- IEEE 802.1X : 2001 Port Based Network Access Control
+- IEEE 802.1AB : Station and Media Access Control Connectivity Discovery (LLDP)
+- IEEE 802.1ad : Provider Bridging
+- IEEE 802.1AE : MAC Security Etherchannel IEEE 802.3ad.
+
+8.2. Composants des réseaux WLAN
+
+- Périphériques Clients
+- Points d’accès
+- Un environnement physique
+- Wireless Controller LAN
+
+8.3. Protocole de contrôle et Overlay WLC-AP
+
+- CAPWAP
+- LWAPP
+
+8.4. Protocoles d’authentification
+
+- EAP : PEAP, …
+- Une infrastructure à clé publique (PKI)
+- Serveur d’authentification Radius
+- Base de donnée d’utilisateurs (Local, LDAP, Annuaire fédéré, …)
+

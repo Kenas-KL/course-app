@@ -1,0 +1,101 @@
+8. LA TECHNOLOGIE VLAN
+
+Qu'est-ce qu'un VLAN et comment fonctionne-t-il ?
+
+Un VLAN est un sous-réseau logique de périphériques dans un domaine de diffusion, partitionné par des commutateurs réseau et/ou un logiciel de gestion de réseau, qui peut agir en propre comme un réseau local LAN distinct.
+
+Les commutateurs qui prennent en charge les VLAN offrent aux gestionnaires de réseau la possibilité de créer des segments de réseau virtuels flexibles, indépendants de la topologie physique filaire ou sans fil sous-jacente.
+
+Les VLAN fonctionnent soit au niveau de la couche de liaison de données Layer 2, soit au niveau de la couche réseau Layer 3, en fonction de la conception du réseau.
+Différents protocoles réseau prennent en charge les VLAN. C’est le cas notamment de l’Ethernet et du WiFi.
+
+Avantages des VLAN
+Les VLAN (Virtual LAN) présentent de nombreux avantages pour la gestion d’un réseau local. Voici les principaux avantages des VLAN :
+
+1. Réduction des diffusions de broadcast :
+Les VLAN permettent de limiter les diffusions de broadcast en isolant les groupes d’utilisateurs dans des réseaux logiques distincts.
+Chaque groupe d’utilisateur ne peut communiquer qu’avec les utilisateurs du même VLAN, ce qui réduit considérablement les diffusions de broadcast sur l’ensemble du réseau.
+
+2. Optimisation de la bande passante :
+En limitant les diffusions de broadcast, les VLAN permettent d’optimiser la bande passante du réseau.
+Cela permet d’améliorer les performances et de réduire les temps de latence, en particulier dans les réseaux à forte charge.
+
+3. Gestion des utilisateurs par fonction ou département :
+Les VLAN permettent de regrouper les utilisateurs par fonction ou département, ce qui facilite la gestion du réseau.
+Les administrateurs peuvent définir des politiques de sécurité, de qualité de service ou de bande passante pour chaque VLAN, en fonction des besoins des utilisateurs.
+
+4. Amélioration de la sécurité :
+Les VLAN permettent également d'améliorer la sécurité en limitant l’accès aux ressources du réseau. '
+Chaque VLAN est considéré comme un réseau distinct, ce qui permet de définir des politiques de sécurité spécifiques pour chaque groupe d’utilisateurs.
+
+En résumé, les VLAN sont un moyen efficace de limiter les diffusions de broadcast, d’optimiser la bande passante, de faciliter la gestion des utilisateurs et d’améliorer la sécurité du réseau.
+En comprenant les avantages des VLAN, Vous pouvez optimiser la performance de votre réseau local.
+
+LA NUMEROTATION VLAN
+
+Il existe trois types de VLANs : 
+- VLANs standard (numéroté de 1 à 1001)
+- VLANs réservés (numéroté de 1002 à 1005) 
+- VLANs étendus (numéroté de 1006 à 4094)
+
+Chacun de ces types de VLANs a des caractéristiques et des utilisations spécifiques.
+
+Les VLANs standard sont disponibles sur tous. Les commutateurs. Ces VLANs sont utilisés pour la segmentation de base et la gestion du trafic de données sur un réseau local.
+Les VLANs standard peuvent être créés, supprimés et modifiés par les administrateurs du réseau.
+
+Les VLANs réservés sont réservés à des fonctions spéciales et sont disponibles sur tous les commutateurs.
+
+Le VLAN 1002 est utilisé pour le trafic de liaison entre les commutateurs, les VLAN 1003 est utilisé pour le trafic de la voix, le VLAN 1004 est utilisé pour le trafic de liaison des protocoles de gestion et le 1005 est utilisé pour le trafic de liaison de la sécurité.
+
+Les VLANs étendus sont disponibles uniquement sur les commutateurs qui prennent en charge le protocole VLAN étendu (VLAN Trunking Protocol – VTPV3).
+Les VLANs étendus sont utilisés pour la segmentation avancée et la gestion du trafic de données sur un réseau local.
+Les VLANs étendus peuvent être créés, supprimés et modifiés par les administrateurs du réseau.
+
+Comment peut t on communiquer en étant dans des VALN séparé ? 
+Pour Répondre à cette question, nous aborder la nation du routage inter vlan.
+
+Avec le routage Inter-VLAN :
+Chaque VLAN est un domaine de broadcast unique.
+
+Les ordinateuers sur des VLAN séparés sont par défaut, incapables de communiquer.
+Pour autoriser une communication entre VLAN, il faut faire du routage inter-VLAN.
+Cela est faisable uniquement avec un périphérique de couche 3, comme un routeur, car ces interfaces peuvent être connectées à des VLAN séparés.
+
+Pour rappel, le switch est un périphérique de couche 2.
+Il ya 3 manières différentes pour faire du routage Inter Vlan : 
+- On peut faire le routage inter Vlan avec un routeur qui dispose d’une intérface séparée dans chaque VLAN.
+C’est Ce qu’on appel du routage du Routage VLAN Traditionnel.
+
+Image:require\imgs\54.jpg
+Les VLAN sont associés à des sous – réseaux IP. Cette configuration facilite le routage dans unréseau de plusieurs Vlan.
+Dans cette topologie, les ordinateurs du VLAN 10, doivent passer par le routeur pour pouvoir communiquer avec ceux du VLAN 20.
+Le problème avec cette solution, c’est qu’il faut utiliser une interface du routeur pour chaque vlan. Puis qu’il y a de vlan, et plus il faut bloquer des interfaces sur le routeur.
+Cette solution n’est donc pas vraiment évolutive.
+- Une autre solution consiste à utiliser un switch de couche 3
+
+
+Image:require\imgs\55.jpg
+Certains switchs sont capables d’effecturer des fonctions de couche 3, ce qui permet de remplacer le routeur , caar le périphérique de couche 3 est capable d’effectuer le routage inter VLAN.
+
+Traditionnellement, un switch est un périphérique de couche 2, c’est-à-dire qu’il examine l’entête de la couche 2, là où iil ya les adresses MAC pour acheminer les paquets.
+
+Et le routeur examine la couche 3, là où il y a les adresses IP, pour effectuer le routage. Un switch de couche 3 combine la fonctionnalité d’un switch et d’un routeur.
+Dans un seul et même appareil. Il switch le trafic, lorsque la source et la destination sont dans le même VLAN, et route le trafic lorsqu’ils sont dans des VLAN différents, c’est-à-dire sur différents sous réseaux IP.
+
+Pour activer cette fonction sur un switch de couche 3, il faut lui configurer des interfaces VLAN, en utilisant les IP de chaque sous réseau.
+Cette option est plus évolutive que la première option. Celle du routeur avec une interface séparée pour chaque VLAN.
+
+De plus, un routeur transmet le trafic à travers le trunk qui est configuré avec le switch. Et le faite, d’utiliser un switch de couche 3 permet d’éviter ce goulot d’étranglement.
+Un switch de couche 3 principalement un périphérique de couche 2 qui a été mis à niveau pour avoir des capacités de routage.
+
+Et un routeur est un périphérique de couche 3 qui peut effectuer certaines fonctions de switching.
+- La dernière option est connue sous le nom de router – on -a-stick
+
+
+Image:require\imgs\56.jpg
+L’avantage de cette solution, c’est qu’ici la configuration du routage inter VLAN ne demande pas de bloquer une interface physique par VLAN.
+Il est possible de créer des sous interfaces qui appartiennent chacune aux sous réseaux IP des différents vlan.
+Ce qui signifie qu’une seule interface physique permet de relier le trafic entre plusieurs VLAN.
+Ce sont des multiples interfaces virtuelles qui sont associées à une seule interface physique.
+Chaque vlan, dois avoir sa propre interface virtuelle, c’est-à-dire, qu’elles doivent être configurées indépendamment, avec une adresse IP.
+En Général, on configure les sous-interfaces avec des sous -réseaux qui correspondent au nom des Vlan.

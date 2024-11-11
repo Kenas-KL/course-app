@@ -1,0 +1,95 @@
+11. GESTION D’INFRASTRUCTURE 
+CONNEXION CONSOLE SUR UN SWITCH OU UN ROUTEUR CISCO
+
+Borne WiFi, switch, routeur, firewall ... Tous les équipements Cisco disposent d'un port console, permettant un accès simple et rapide à l'interface de configuration en ligne de commande (CLI). La console est le mode de connexion qui est à utiliser quand vous configurez votre équipement pour la première fois, et qu'il ne dispose pas encore d'une adresse IP.Le but de ce guide est d’indiquer comment se connecter en console à un switch ou un routeur Cisco. Se connecter en console est le fait de réaliser, depuis votre PC, un branchement de manière physique à un équipement Cisco pour accéder à la console.
+
+11.1. Pourquoi se connecter en console à un équipement ?
+Le port console d’un équipement réseau est à la fois son premier et dernier moyen de configuration :
+- c’est le premier à utiliser quand vous n’en avez pas encore configuré d’autres (telnet, ssh, web, etc.) ;
+
+- et le dernier recours dont vous disposez quand les autres ne fonctionnent plus (plus d’accès distant, mot de passe oublié, équipement qui ne démarre plus, etc .).
+
+11.2. Connecter le PC et votre équipement Cisco
+Pour pouvoir vous connecter en console à un périphérique Cisco, vous devez vous munir des matériels suivants :
+
+
+Image:require\imgs\64.jpg
+- Switch ou routeur Cisco (en provenance d’astarox.com bien sûr !) ;
+- Câble d’alimentation (fourni avec l’équipement) ;
+- Câble console : câble série RS-232 de couleur bleue, caractéristique de la marque Cisco (fourni avec l’équipement).
+
+Attention : il est de plus en plus rare de trouver un port série sur un PC aujourd’hui, contrairement à un port USB. Ainsi, il est probable que vous ayez besoin d’un adaptateur USB-série, qui permet de transformer un port USB en port de communication série.
+
+Pour interconnecter votre PC et le switch ou le routeur Cisco, vous devez alimenter l’équipement grâce au câble prévu à cet effet, et le mettre sous tension en appuyant sur l’interrupteur à côté du port d’alimentation, s’il en possède un. Tous les équipements n’en ont pas.
+
+
+Image:require\imgs\65.jpg
+
+Connectez ensuite le câble série RS-232 sur le port nommé “console” du switch ou routeur Cisco, et le port série sur votre PC. Si vous ne disposez pas d’un port série sur votre PC, utilisez un adaptateur USB-série. Connectez le port série de l’adaptateur USB-série au câble série, puis connectez l’adaptateur à votre PC au moyen du port USB, comme illustré ci-dessous.
+
+
+Image:require\imgs\66.jpg
+Les réglages par défaut du port console Cisco sont :
+Bits per sec : 9600
+Data bits : 8
+Parity : none
+Stop bits : 1
+Flow control : none
+
+La plupart des logiciels, dont PuTTy et Picocom, utilisent ces réglages par défaut donc vous n’avez rien à changer, à part le numéro du port série à utiliser sur votre PC. Si votre console affiche des caractères étranges, ou si vous n’arrivez pas à vous connecter, il est probable que ces réglages ne soient pas bons. Vous pouvez essayer les vitesses suivantes : 19200, 38400, 57600 ou 115200. Les autres réglages sont très rarement modifiés.
+
+11.3. Se connecter en console sous Windows
+
+Nous verrons ici la marche à suivre pour se connecter en console à un switch ou un routeur Cisco, avec un PC qui utilise Windows comme système d’exploitation.
+
+Retrouver le numéro du port actif avec un PC sous WindowsAvant de commencer, vous devez connaître le numéro de port sur lequel vous avez connecté votre switch ou routeur. Si vous le connaissez déjà, vous pouvez passer à l’étape suivante.Sinon, il vous faut ouvrir votre gestionnaire de périphérique. Suivez les étapes suivantes pour y accéder :Démarrer > Panneau de Configuration > Système > Gestionnaire de Périphériques
+
+
+
+Image:require\imgs\67.jpg
+
+Si vous avez connecté votre périphérique à un port USB, vous pouvez voir, dans l’onglet “Port (COM & LPT)”, le numéro de port qui a été assigné à la connexion. Si vous l’avez connecté à un port série, vous pouvez retrouver le numéro de port dans le même onglet, sachant que ce numéro ne change jamais, contrairement au numéro d’un port USB.
+
+Utiliser PuTTy
+
+Pour pouvoir accéder à la console du switch ou routeur, il faut utiliser PuTTy, un logiciel téléchargeable gratuitement. Pour le mettre en mode “série”, il vous suffit de cliquer sur “Serial”. Entrez ensuite le port utilisé pour connecter votre machine au switch ou routeur, et, si ce n’est pas déjà le cas, entrez la valeur ”9600” pour la vitesse en bits/seconde.
+
+
+
+Image:require\imgs\69.jpg
+
+En cliquant sur “Open”, vous accédez à la console du périphérique précédemment connecté. Le switch ou routeur peut prendre un certain temps pour s’initialiser. Vous pouvez ensuite réaliser de nombreuses configurations en ligne de commande
+
+
+Image:require\imgs\70.jpg
+
+Image:require\imgs\71.jpg
+11.4. Se connecter en console linux 
+Nous verrons ici la marche à suivre pour se connecter en console à un switch ou un routeur Cisco, avec un PC qui utilise Linux comme système d’exploitation.
+Retrouver le numéro du port actif avec un PC sous Linux
+
+Avant de commencer, vous devez connaître le numéro de port sur lequel vous avez connecté votre switch ou routeur. Si vous le connaissez déjà, vous pouvez passer à l’étape suivante. Sinon, il vous faut ouvrir le terminal. Pour ce faire, il suffit d’entrer au clavier CTRL+ALT+T.
+
+Si vous avez connecté votre switch ou routeur sur un port USB, vous trouverez le numéro de port en tapant la ligne de commande comme ci-dessous
+
+ls -l /dev/ttyUSB*
+
+Ici, on voit que le numéro de de port est ‘0’.
+
+root@ubuntu-cde:/# ls -l /dev/ttyUSB*
+crw-rw---- 1 root dialout 188, 0 janv. 23 17:14 /dev/ttyUSB0
+root@ubuntu-cde:/#
+
+Utiliser Picocom
+Pour pouvoir accéder à la console du switch ou routeur, il faut utiliser Picocom, un logiciel qui va s’utiliser en ligne de commande. Il faut alors entrer la commande comme dans la capture d’écran ci-dessous.
+
+picocom /dev/ttyUSB0 -b 9600
+
+
+Dans notre exemple, nous utilisons ttyUSB0 car nous avons vu précédemment que c'était le numéro de port attribué à notre adaptateur série USB.
+
+Ce ne sera pas forcément pareil chez vous, il faut l’adapter selon le numéro de port que votre machine utilise.L'argument “-b 9600” correspond au réglage du débit en bits/seconde, qui est par défaut de 9600 sur les équipements Cisco.Il peut être nécessaire de valider plusieurs fois (2) avec "Entrée"
+
+
+Image:require\imgs\72.jpg
+Si la connexion est établie, vous obtenez l'invite de ligne de commande. Vous êtes alors en position d’administrer votre switch ou routeur.

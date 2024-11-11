@@ -1,0 +1,39 @@
+3. ADRESSAGE IPV6
+
+Les adresses IPv6 sont assignées à des interfaces, plutôt qu'à des nœuds, dans la mesure où un nœud peut disposer de plusieurs interfaces. De plus, vous pouvez assigner plusieurs adresses IPv6 à une interface.UnicastIdentifie l'interface d'un nœud individuel.
+
+Multidiffusion Identifie un groupe d'interfaces, en règle générale sur des nœuds différents. Les paquets envoyés à l'adresse multidiffusion vont à tous les membres du groupe multidiffusion.
+
+Anycast Identifie un groupe d'interfaces, en règle générale sur des nœuds différents. Les paquets envoyés à l'adresse anycast vont au nœud membre du groupe anycast le plus proche de l'expéditeur.
+
+Parties de l'adresse IPv6
+
+Une adresse IPv6 est longue de 128 bits et se compose de huit champs de 16 bits, chacun étant délimité par deux-points (:). Chaque champ doit contenir un nombre hexadécimal, à la différence de la notation en format décimal avec points des adresses IPv4. Dans l'illustration suivante, les x représentent des nombres hexadécimaux.
+
+
+Image:require\imgs\11.jpg
+Les trois champs situés complètement à gauche (48 bits) contiennent le préfixe de site. Le préfixe décrit la topologie publique allouée en général à votre site par un FAI ou un registre Internet régional (RIR, Regional Internet Registry).
+
+Le champ suivant correspond à l'ID de sous-réseau de 16 bits alloué au site (par vous ou par un autre administrateur). L'ID de sous-réseau décrit la topologie privée, appelée également topologie de site, car elle est interne au site.
+
+Les quatre champs les plus à droite (64 bits) contiennent l'ID d'interface, également appelée jeton. L'ID d'interface est soit configurée automatiquement à partir de l'adresse MAC de l'interface, soit configurée manuellement au format EUI-64.
+
+Abréviation d'adresses IPv6 
+
+En général, les adresses IPv6 n'occupent pas la totalité des 128 bits dont elles disposent. Par conséquent, certains champs sont renseignés partiellement ou en totalité par des zéros.
+L'architecture d'adressage IPv6 vous permet d'utiliser la notation à deux points (: : ) pour représenter les champs de zéros contigus de 16 bits.
+
+Vous pouvez par exemple raccourcir l'adresse IPv6 de la figure ci-dessus en remplaçant les deux champs de zéros contigus de l'ID d'interface par deux deux-points.
+L'adresse devient alors : 2001:0db8:3c4d:0015::1a2f:1a2b. Les autres champs de zéros peuvent être représentés par un seul 0.
+
+Vous pouvez également omettre tout zéro de début d'un champ, en remplaçant par exemple 0db8 par db8. Par conséquent, l'adresse 2001:0db8:3c4d:0015:0000:0000:1a2f:1a2b peut être raccourcie en 2001:db8:3c4d:15::1a2f:1a2b.
+
+Vous pouvez utiliser la notation à deux deux-points afin de remplacer les champs contigus composés de zéros de l'adresse IPv6.
+Par exemple, l'adresse IPv6 2001:0db8:3c4d:0015:0000:d234::3eee:0000 peut être raccourcie en 2001:db8:3c4d:15:0:d234:3eee::.
+
+Préfixes d'IPv6 Les champs de l'adresse IPv6 situés complètement à gauche contiennent le préfixe utilisé pour le routage de paquets IPv6. Le format des préfixes IPv6 est le suivant : préfixe/longueur en bitsLa longueur du préfixe est indiquée en notation CIDR.
+
+La notation CIDR correspond à un slash (/) à la fin de l'adresse, suivi de la longueur du préfixe en bits.
+
+Le préfixe de site d'une adresse IPv6 occupe jusqu'à 48 des bits situés complètement à gauche de celle-ci. Par exemple, le préfixe de site de l'adresse IPv6 2001:db8:3c4d:0015:0000:0000:1a2f:1a2b/48 réside dans les 48 bits situés complètement à gauche, soit 2001:db8:3c4d.
+

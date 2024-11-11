@@ -1,0 +1,262 @@
+7. LE CABLAGE
+
+
+Image:require\imgs\24.jpg
+coaxial sont les trois types principaux des câbles réseau utilisés dans les systèmes de communication.
+Quelle est la différence entre leurs performances et leurs capacités ?
+Qu’est-ce que le câble à fibre optique ?
+Le câble à fibre optique est un type de câble Ethernet composé d’une ou de plusieurs fibres optiques utilisés pour la transmission de données.
+Le câble à fibre optique transmet des données sous forme d’impulsions de lumière qui passent à travers de minuscules tubes de verre.
+Le câble à fibre optique peut être divisé en fibres monomode (SMF) et multimode (MMF). La fibre optique monomode a un petit noyau et ne permet qu’un seul mode de lumière de se propager à la fois.
+Alors que le câble à fibre optique multimode a un noyau plus grand et est conçu pour transporter plusieurs rayons lumineux ou modes en même temps.
+Le câble à fibre monomode commun est OS2 et les câbles à fibre optique multimodes communs sont OM1, OM2, OM3, OM4 et OM5.
+Et la distance de transmission du câble à fibre optique monomode est jusqu’à plusieurs kilomètres, tandis que celle du câble à fibre optique multimode atteint 550 mètres sur le réseau 10G.
+
+Pour en savoir plus sur les types de câbles à fibre optique, le principe de fonctionnement et les conseils d’installation, veuillez lire : Les Avantages et les Inconvénients des Câbles à Fibres Optiques.
+
+
+Image:require\imgs\25.jpg
+Qu’est-ce que le câble à paire torsadée ?
+Le câble à paire torsadée est souvent utilisé pour les communications de téléphone et la plupart des réseaux Ethernet modernes.
+C’est une sorte de câblage dans lequel deux conducteurs d’un même circuit sont torsadés ensemble. Une paire de fils forme un circuit capable de transmettre des données.
+Et les paires sont torsadées ensemble pour fournir une protection contre la diaphonie, le bruit généré par les paires adjacentes.
+
+Image:require\imgs\26.jpg
+Il existe deux types de câbles Ethernet à paire torsadée : la paire torsadée non blindée (UTP) et la paire torsadée blindée (STP).
+Le câble en cuivre UTP couramment utilisé est Cat5, Cat5e, Cat6, Cat6a et Cat7. Le câble en cuivre STP a une feuille métallique enveloppée à l’extérieur de chaque paire de fils.
+Les quatre paires de fils sont ensuite enveloppées ensemble dans une tresse ou une feuille métallique, généralement un câble de 150 ohms.
+Le câble STP a une meilleure capacité de résistance au bruit que le câble UTP.
+
+Qu’est-ce que le câble coaxial ?
+Le câble coaxial est conçu pour transmettre des signaux de haute fréquence.
+Il est composé d’un conducteur rond en cuivre et de trois couches d’isolation et de blindage empêchant l’interférence des moteurs, des éclairages et d’autres sources d’EMI.
+Avec la construction de blindage, le câble coaxial peut supporter les longueurs de câble plus longues entre deux dipositifs.
+
+Image:require\imgs\27.jpg
+Il existe un certain nombre de différents types de câbles coaxiaux, mais seulement les deux types-RG59 et RG6-sont les plus utilisés dans les applications résidentielles.
+Le nom «RG» remonte à la Seconde Guerre mondiale et signifie «guide de radio», ce qui n’a pas vraiment de signification aujourd’hui.
+
+
+Image:require\imgs\28.jpg
+A. Vitesse, largeur de bande & distance
+Le câble coaxial et le câble à paire torsadée sont des fils de cuivre ou à base de cuivre entourés d’une isolation avec d’autres matériaux.
+Tous les deux peuvent transmettre les signaux électriques de la télévision, du téléphone et des données.
+Alors que le câble à fibre optique peut délivrer les mêmes types de signaux avec une largeur de bande beaucoup plus large, une vitesse plus rapide et des fréquences plus élevées.
+Il est composé de tubes souples très minces en verre ou en plastique.
+
+B. INSTALLATION
+Bien que les câbles à fibre optique offrent un avantage considérable en termes de flexibilité de largeur de bande et de fiabilité.
+Ils ne sont pas aussi répandus que les câbles coaxiaux ou les câbles à paire torsadée.
+Et les câbles à fibre sont plus fragiles et plus minces que les câbles à paire torsadée et les câbles coaxiaux, ce qui nécessite plus de soin pour l’installation, l’utilisation et la maintenance.
+
+Comparé au câble à paire torsadée, le câble coaxial peut atteindre une plus grande distance. Cependant, en raison de l’isolant diélectrique autour du noyau de cuivre dans le câble coaxial, il est difficile de l’installer et de le maintenir.
+
+C. APPLICATION
+Les câbles à fibre optique ne sont pas uniquement installés pour supporter les connexions à longue distance entre les villes et les villages, mais également dans les banlieues pour un accès direct comme les réseaux FTTH, FTTP, FTTB, FTTC,etc.
+qui s’appelle les installations du «dernier kilomètre».
+Et ils sont largement utilisés dans les centres de données où de gros volumes de données doivent être transmis.
+
+Les câbles à paire torsadée sont principalement utilisés dans les réseaux de téléphone, les réseaux de données et le blindage de câbles.
+
+Les applications du câble coaxial comprennent les lignes d’alimentation connectant les émetteurs et récepteurs de radio à leurs antennes, les connexions de réseau informatique (Internet), l’audio numérique (S/PDIF) et la distribution de signaux de télévision par câble.
+
+Et ils peuvent également être utilisés pour les connexions d’interface multimédia de haute définition.
+En Bref, Il existe des différences évidentes entre les câbles à fibre optique, les câbles à paire torsadée et les câbles coaxiaux.
+La fibre optique semble devenir la tendance à la demande croissante du marché à mesure que la technologie se développe rapidement.
+Toutefois, le choix de câbles à paire torsadée, de câbles coaxiaux ou de câbles à fibre optique dépend encore des applications, de la distance de transmission et des performances.
+
+
+Image:require\imgs\29.jpg
+8.1. TYPES DES CÂBLES A PAIRE BIFILAIRE TORSADÉE
+
+
+Image:require\imgs\30.jpg
+
+Image:require\imgs\32.jpg
+
+Image:require\imgs\34.jpg
+
+Image:require\imgs\35.jpg
+Les câbles de télécommunication sont classés en différentes catégories définissant principalement la qualité d’intégrité du signal transmis.
+Ces catégories sont définies par la norme ANSI/EIA/TIA 568-B. Norme internationale :
+ISO/CEI 11801. Norme française : NF/EN 50173-1 Certaines catégories (1 et 2) ne sont plus d’actualité car plus utilisées.
+ 
+Catégorie 3 : Cette catégorie définit un type de câblage autorisant une bande passante de 16 MHz.
+Aujourd’hui, ce type de câble n’est utilisé plus qu’en téléphonie sur le marché commercial, tant pour les lignes analogiques que numériques.
+Il est en cours d’abandon au bénéfice de la catégorie 5e ou supérieure. Catégorie 4 : Cette catégorie définit un type de câblage autorisant une bande passante de 20 MHz.
+Principalement utilisé pour les réseaux token-ring 16Mbps et les réseaux 10base-T, il fut rapidement remplacé par les catégories 5 et 5e.
+
+Catégorie 5 : Cette catégorie définit un type de câblage autorisant une bande passante de 100 MHz.
+Ce standard permet l’utilisation du 100base-TX et 1000base-TX, ainsi que diverses applications de téléphonie ou de réseau.
+Dans la norme actuelle, seules les catégories 5e et 6 sont décrites.
+
+Catégorie 5e / classe D : La catégorie 5e (enhanced) définit un type de câblage autorisant une bande passante de 100MHz.
+Cette norme est une adaptation de la catégorie 5.
+o Résistance < 9,38 Ω / 100m o Capacité mutuelle < 5,6 nF / 100 m fréquence comprise entre 1 kHz et 1 GHz o Capacité à la masse < 330 pF o Impédance caractéristique de la paire différentielle :
+
+100 Ω ± 15%, pour une fréquence comprise entre 1 MHz et 1 GHz o Temps de propagation < 5,7 ns/m (à une fréquence de 10 MHz) o Le type de blindage et l’appairage en longueur ne sont pas spécifiés.
+
+Catégorie 6 / classe E : La catégorie 6 définit un type de câblage permettant une bande passante à 250 MHz et plus.
+
+Catégorie 6a /classe Ea : Ratifiée le 8 février 2008, la norme 6a est une extension de la catégorie 6 avec une bande passante de 500 MHz (norme ANSI/TIA/EIA-568-B.2-10).
+
+Cette norme permet le fonctionnement du 10GBASE-T sur 100 mètres.
+
+Exemple du nombre de torsades par paire mesuré sur un câble de catégorie 6a :
+
+Bleu / bleu-blanc : 55 tours/m Vert / vert-blanc : 50 tours/m Orange / orange-blanc : 43 tours/m Marron / marron-blanc : 33 tours/m
+
+Catégorie 7 / classe F : La catégorie 7 définit un type de câblage permettant une bande passante de 600 MHz.
+
+• Catégorie 7a / classe Fa : La catégorie 7a permet une bande passante de 1 GHz (en cour d’étude).
+
+LES CONNECTEURS 
+1. Les connecteurs RJ 45
+
+Image:require\imgs\36.jpg
+C’est le connecteur RJ45 (Registered Jack) qui est le plus couramment utilisé en terminaison d’un câble à paires torsadées.
+Il comporte 8 broches de connexion électrique (voir numérotation cicontre). Il est souvent associé au standard TIA/EIA-568-B qui décrit le brochage de terminaison du câble.
+Utilisé très couramment dans les réseaux informatiques câblés en étoile (type Ethernet), on le retrouve également en téléphonie.
+
+Image:require\imgs\37.jpg
+Lors d’un câblage informatique en 10base-T ou 100base-T seules 2 paires torsadées sont utilisées : contacts 1-2 et 3-6.
+Une paire en émission (Tx) et une en réception (Rx). Lors d’une utilisation en 1000base-T, les 4 paires sont utilisées (8 contacts utilisés) en émission et réception.
+Lorsqu’un poste de travail est connecté à un HUB (concentrateur) ou un SWITCH (commutateur), il faut utiliser un câble droit.
+Lorsque deux postes sont reliés directement, il faut utiliser un câble croisé.
+Certains équipements réseau récents sont toutefois capables de faire du (dé)croisement automatique en fonction du type de câble (MDI/MDI-X).
+
+
+Image:require\imgs\38.jpg
+En utilisatiion en 10 Mbps et 100 Mbps. seules 2 paires sont réception (RX) utilisées (en full duplex).
+Émission (TX) coté poste de travail, en fonctionnement normal : 1-2 en émission et 3-6 en réception .
+L’appellation internationale du connecteur RJ45 est : modular plug 8P8C (8 positions/8 contacts)
+
+Norme de couleur et câblage T568A et T568B
+
+La norme détermine 4 numéros de paire associés chacun à f:lune couleur : Paire 1 bleu, paire 2 orange, paire 3 vert, paire 4 marron.
+
+Image:require\imgs\39.jpg
+CÂBLAGE DROIT
+
+Image:require\imgs\40.jpg
+Il existe des câbles droits câblés selon la norme T568A et d’autres selon la norme 568B. L’important est que les deux extrémités soient câblées selon la même norme.
+
+câblage croisé 
+Il existe deux types de câbles croisés. Ceux utilisés dans les réseaux 10Mbps et 100Mbps qui ne croisent que les paires 2 et 3 et ceux utilisés en 1Gbps qui croisent les 4 paires.
+
+
+Image:require\imgs\41.jpg
+Fabrication d’un câble. 
+le câble croisé en 10base T et 100base TXLa fabrication d’un câble réseau n’est pas très fréquente, elle peut rendre service dans certains cas.C’est une opération minutieuse et quelques règles doivent être respectées. Les outils indispensables sont la pince coupante et la pince à sertir (RJ45)
+
+
+Image:require\imgs\42.jpg
+
+Image:require\imgs\43.jpg
+PREPAPRER UN CÂBLE COAXIAL ETAPES
+a) Procurez-vous le matériel nécessaire. 
+Pour effectuer les terminaisons d'un câble coaxial, vous aurez besoin des outils et matériels suivants.
+
+- Un connecteur à pression.
+Différents types de connecteurs sont disponibles sur le marché.
+Vous obtiendrez une meilleure finition et qualité de connexion avec un connecteur à pression.
+Une autre solution de bonne qualité consiste à employer des connecteurs à sertir.
+Il faut éviter les connecteurs à visser ou à pousser qui n'ont aucune tenue dans le temps et dont les caractéristiques sont limitées.
+
+- Une pince à sertir ou à presser.
+Vérifiez qu'elle est compatible avec le type de connecteur que vous allez employer.
+La meilleure garantie de compatibilité consiste à acheter les connecteurs et la pince chez le même revendeur en lui demandant expressément, de manière à éviter les mauvaises surprises.
+
+-Un outil à dénuder pour câbles coaxiaux.
+Cet outil se limite à couper les couches d'isolant et de blindages aux profondeurs et distances pour lesquelles vous devrez le régler au préalable.
+Il n'ôtera pas les parties coupées, vous devrez le faire à la main.
+
+- Une pince coupante (de précision) pour câbles électriques.
+Notez que la pince coupante doit être d'un modèle utilisé en électronique et ne présentant pas d'angle de bord de coupe afin d'obtenir une coupe de bonne précision.
+
+- Un gabarit de mise en place pour le connecteur,
+qui sera utilisé pour pousser le connecteur sur le câble dénudé. Cet outil s'utilise aussi pour vérifier les bonnes dimensions du dénudage du câble.
+b) Coupez votre câble à angle droit
+
+
+Image:require\imgs\44.jpg
+Utilisez votre pince coupante pour faire cette coupe à angle droit à l'extrémité de votre câble.
+Lorsque vous l'aurez fait, reformez son extrémité avec vos doigts de manière à obtenir un profil bien circulaire de l'extrémité du câble.
+
+c) Réglez l’outil à dénuder en fonction de votre câble et du connecteur à poser.
+
+
+Image:require\imgs\45.jpg
+La plupart des dénudeurs coaxiaux doivent être réglés pour préparer des câbles à écran double ou quadruple.
+Utilisez la clé Allen livrée avec l'outil pour l'ajuster. Si vous ne faites pas correctement ces réglages, vous risquez d'éliminer la partie utile du blindage du câble et serez dans l'obligation de le raccourcir pour recommencer.
+
+- Le câble le plus connu est le RG6, avec écran double ou quadruple.
+Assurez-vous que votre outil à dénuder soit bien réglé pour ce type de câble et non pour celui utilisable sur les réseaux Ethernet qui est différent.
+Le RG6 est fréquemment utilisé en télévision par câble ou en descente d'antenne de télévision.
+
+- Si vous utilisez votre outil pour dénuder un câble a écran quadruple alors qu'est réglé pour travailler sur un câble à écran double, le dénudage ne se fera pas correctement.
+
+
+Image:require\imgs\46.jpg
+
+d) Dénudez l'âme du câble coaxial.
+
+Image:require\imgs\47.jpg
+Positionnez son extrémité dans l'outil de telle manière qu'elle corresponde à l'extrémité de l'outil à dénuder.
+Fermez-le sur la partie centrale et faites-lui faire un ou deux tours autour du câble.
+
+- Vous pouvez considérer que le dénudage est terminé lorsque vous ne ressentez plus aucune résistance en tournant votre outil autour du câble.
+
+- Lorsque vous aurez terminé, ne tirez pas sur l' outil à dénuder pour enlever l'isolant coupé.
+Vous risquez d'en endommager les lames qui sont aussi fines et peu résistantes que des lames de rasoir.
+Déverrouillez votre outil et ouvrez-le pour retirer à la main l'isolant du câble.
+
+e) Retirez l’écran extérieur
+
+
+Image:require\imgs\48.jpg
+Après avoir ouvert votre outil, vous devriez apercevoir deux segments coupés. Retirez le segment le plus proche de l'extrémité du câble.
+Ceci révèle la partie conductrice centrale appelée aussi « âme » du coaxial.
+
+f) Retirez le second segment
+
+Image:require\imgs\49.jpg
+
+Vous devez voir apparaitre maintenant une fine bande transparente d'isolant enroulée autour du câble.
+Cherchez-en le bord et pelez-lapour mettre à jour un treillis de fils métalliques très fins qu'on nomme « blindage », qui est tressé autour d'un isolant de couleur blanche.
+
+g) Retroussez le blindage 
+
+
+Image:require\imgs\50.jpg
+Le treillis métallique ou blindage, que vous venez de mettre à l'air constitue électriquement la masse ou « point froid » du câble.
+Retroussez-le sur son revêtement du de telle façon que la carcasse du connecteur que vous allez mettre en place entre bien en contact avec.
+Vérifiez qu'aucun des fils constituant le blindage ne reste sur l'isolant de l'âme du câble ou n'obstrue son passage dans le connecteur.
+Cela risquerait de provoquer un court-circuit impossible à éliminer à moins de refaire complètement votre travail en sacrifiant le connecteur et quelques centimètres de câble.
+
+h) Coupez le conducteur en excédent si c'est nécessaire.
+
+
+Image:require\imgs\51.jpg
+
+La plupart des outils de dénudage laisseront juste la longueur nécessaire de conducteur exposée, mais cela ne fait pas de mal de vérifier avant d'engager le connecteur. La longueur de conducteur central dénudé doit être de 3,9 mm.
+
+i) Placez le connecteur sur l'extrémité dénudée du câble.
+
+
+Image:require\imgs\52.jpg
+Utilisez le gabarit de mise en place pour pousser fermement le connecteur sur le câble jusqu'à ce que l'isolant blanc s'incruste correctement dedans.
+
+- Assurez-vous de ne pas plier le conducteur central lorsque vous mettez en place le connecteur.
+
+- Vous pouvez avoir à visser le câble dans la carcasse du connecteur en même temps que vous le poussez dedans avec votre gabarit afin d'assurer une connexion ferme du blindage.
+
+j) Compressez ou sertissez le connecteur
+
+Image:require\imgs\53.jpg
+
+La façon de faire dépend du type de connecteur et de la conformation de la pince que vous utilisez. Dans le cas où vous utilisez un connecteur à sertir, vous devrez compresser l'extrémité de l'âme du câble dans le connecteur et si c'est un modèle à pression, il faudra presser pour encastrer sa partie avant dans la carcasse du connecteur où sera « étranglé » le câble.
+
+
+- Pressez fermement votre outil de sertissage ou de compression. La plupart de ces outils, s'ils sont bien conçus, vous empêcheront de dépasser les limites de la force à appliquer, mais d'autres pinces à sertir de bas de gamme peuvent endommager le câble ou le connecteur si vous leur appliquez trop de pression ou de force.
+
