@@ -1,32 +1,20 @@
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - name: Build APK
+        uses: digreatbrian/buildozer-action@v2
         with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install kivy pip install https://github.com/kivymd/KivyMD/archive/master.zip asynckivy webbrowser sqlite3
-      - name: Build the app
-        run: |
-          # Replace with your build command, e.g., for Android:
-          python -m buildozer android debug
-          # For iOS, you might need additional tools and configurations.
+          python-version: 3.8
+          buildozer-cmd: buildozer -v android debug
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Deploy to a server (example)
-        uses: actions/upload-artifact@v3
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
         with:
-          path: dist/AppCourse.apk  # Replace with your build artifact
+          name: package
+          path: ./bin/*.apk
